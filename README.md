@@ -2,7 +2,7 @@
 
 # Internações, Óbitos e Taxa de Mortalidade do SUS entre 2011 e 2021: Impactos da Pandemia
 
-*Versão Preliminar*
+*Versão Preliminar desenvolvida durante o Bootcamp Data Science 2021 da [Alura](https://www.alura.com.br/)*
 
 Este estudo analisa algumas informações do Sistema Único de Saúde do Brasil sobre internações, óbitos e taxa de mortalidade entre janeiro de 2011 até março de 2021, nas 5 regiões e nas 27 unidades da federação, com o objetivo de compreender melhor a evolução destas variáveis e observar como a pandemia tem impactado cada uma delas.
 
