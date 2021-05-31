@@ -8,13 +8,13 @@ Este estudo analisa algumas informações do Sistema Único de Saúde do Brasil 
 
 A organização está feita em duas partes:
 
-Na primeira, estão agrupadas a limpeza dos dados, exposições iniciais das bases de dados e definição de funções que serão posteriormente utilizada. A proposta é concentrar nesta **primeira parte** a complexidade técnica da análise, como envolva grandes blocos. 
+Na primeira, estão agrupadas a limpeza dos dados, exposições iniciais das bases de dados e definição de funções que serão posteriormente utilizada. A proposta é concentrar nesta **primeira parte** a complexidade técnica da análise, como grandes blocos de código.
 
 Assim, é possível abstrair estas complexidades da segunda parte, tornando-a mais acessível a leitores que não tenham familiaridade com programação. A **segunda parte**, é dedicada às análises e visualizações dos dados.
 
 # Próximos Passos
 
-O projeto foi elaborado com uma visão de longo prazo que envolve sua atualização conforme novos dados estejam disponíveis e também sua incrementação com mais análises. Buscarei manter o código bem explicado, para facilitar que hajam contribuições de outras pessoas.
+O projeto foi elaborado com uma visão de longo prazo que envolve sua atualização conforme novos dados estejam disponíveis e também sua incrementação com mais análises. Buscarei manter o código bem explicado, para incentivar contribuições de outras pessoas.
 
 Nesta **versão preliminar** as prioridades foram: estruturar o *notebook*, organizar os dados e padronizar as visualizações para explorações futuras.
 
