@@ -4,13 +4,13 @@
 
 *Versão Preliminar desenvolvida durante o Bootcamp Data Science 2021 da [Alura](https://www.alura.com.br/)*
 
-Este estudo analisa algumas informações do Sistema Único de Saúde do Brasil sobre internações, óbitos e taxa de mortalidade entre janeiro de 2011 até março de 2021, nas 5 regiões e nas 27 unidades da federação, com o objetivo de compreender melhor a evolução destas variáveis e observar como a pandemia tem impactado cada uma delas.
+Este estudo analisa algumas informações do Sistema Único de Saúde do Brasil sobre internações, óbitos e taxa de mortalidade entre janeiro de 2011 e março de 2021, nas 5 regiões e nas 27 unidades federativas, com o objetivo de compreender melhor a evolução destas variáveis e observar como a pandemia tem impactado cada uma delas.
 
 A organização está feita em duas partes:
 
 Na primeira, estão agrupadas a limpeza dos dados, exposições iniciais das bases de dados e definição de funções que serão posteriormente utilizada. A proposta é concentrar nesta **primeira parte** a complexidade técnica da análise, como grandes blocos de código.
 
-Assim, é possível abstrair estas complexidades da segunda parte, tornando-a mais acessível a leitores que não tenham familiaridade com programação. A **segunda parte**, é dedicada às análises e visualizações dos dados.
+Assim, é possível abstrair estas complexidades da segunda parte, tornando-a mais acessível a leitores que não tenham familiaridade com programação. A **segunda parte** é dedicada às análises e visualizações dos dados.
 
 # Próximos Passos
 
