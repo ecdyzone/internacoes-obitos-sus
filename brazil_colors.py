@@ -1,32 +1,36 @@
 """
+module to create matplotlib colormaps for brazilian states/regions
+
 ######## HOW TO USE ########
 
-1. The official order of states/regions is ok? ------> use get_brazil_colors()
-2. Any case that doesn't follow the official order? -> use create_ordered_colormap()
+1. The official order of states/regions is ok?      --> use get_brazil_colors()
+2. Any case that doesn't follow the official order? --> use create_ordered_colormap()
 
-first, create the dictionaries
+######## EXAMPLES ########
+
+1.
+creating dictionaries colors:
 brazil_colormaps, color_of_each_state_or_region = get_brazil_colors()
-# try stronger_colors=True if you need more contrast between colors
 
+brazil_colormaps[key] is an instance of matplotlib.colors.ListedColormap
+brazil_colormaps[key].colors is a numpy array with RGB code for the choosen region or state
+color_of_each_state_or_region is a dict with (key,value) = (state or region name, color as array)
 
-# returns matplotlib.colors.ListedColormap with 27 colors in the official order
 pandas.Dataframe.plot(colormap = brazil_colormaps['States'])
+    here, brazil_colormaps['States'] is a matplotlib.colors.ListedColormap with 27 colors in the official order
 
-# returns matplotlib.colors.ListedColormap with 27 colors in the official order
 sns.violinplot(palette = brazil_colormaps['Regions']).colors)
+    here, brazil_colormaps['Regions']).colors is a matplotlib.colors.ListedColormap with 27 colors in the official order
 
-# return numpy array with the RGB color of chosen state or region
 pandas.Dataframe.plot(color = color_of_each_state_or_region['Nordeste'])
+    here, color_of_each_state_or_region['Nordeste'] is a numpy array with the RGB color of chosen state or region
 
-# for use cases out of the official order, use the create_ordered_colormap() function
-create_ordered_colormap()
+2.
+my_colormap = create_ordered_colormap(index=['Nordeste', 'Sul', 'São Paulo'])
+pandas.Dataframe.plot(colormap = my_colormap)
 
-
-### USES ###
-
-# brazil_colormaps[key] returns instance of matplotlib.colors.ListedColormap
-# brazil_colormaps[key].colors returns numpy array with RGB code for the choosen region or state
-# color_of_each_state_or_region
+my_colormap2 = create_ordered_colormap(index=df.index, output_as_list=True)
+sns.catplot(palette=my_colormap2)
 
 
 ##### WHAT'S INSIDE THE DICTIONARIES #####
@@ -40,7 +44,7 @@ create_ordered_colormap()
 #  'Regions': <matplotlib.colors.ListedColormap at 0x7f37a7043820>,
 #  'States': <matplotlib.colors.ListedColormap at 0x7f37a7043850>}
 
-## color_of_each_state_or_region (showing first 3 items of the 27 + 5)
+## color_of_each_state_or_region (showing first 3 items of the 32 items (27 state + 5 regions))
 # {'Rondônia': array([0.77922338, 0.91323337, 0.75180315, 1.        ]),
 #  'Acre': array([0.68104575, 0.87189542, 0.65620915, 1.        ]),
 #  'Amazonas': array([0.5739331 , 0.82417532, 0.56061515, 1.        ]),
@@ -86,10 +90,12 @@ states_to_regions_oficial_order = {
  'Distrito Federal': 'Centro Oeste'}
 
 def get_brazil_colors(stronger_colors=False):
-    '''
+    """
     :param stronger_colors: try stronger_colors=True if you need more contrast between colors
     :return: two dictionaries: the first with colormaps, and another with (key,value) = (state or region, its own color)
-    '''
+
+    (for more, see module brazil_colors.py docstring)
+    """
 
     colors_to_parse = ['Greens', 'Reds','Purples', 'Blues', 'YlOrBr'] # Maybe 'Oranges' is better than 'YlOrBr'
 
@@ -133,12 +139,14 @@ def create_ordered_colormap(index, output_as_list=False, replace_state_color_by_
     """
     :param index: pandas Index or list-like object with the desired order of colors
     :param output_as_list: default output is a matplotlib cmap <matplotlib.colors.ListedColormap>
-    :param replace_state_color_by_region: if True, all the states of a region will have the same color.
-                                          if False, each state keeps its own color
-    :return: list or cmap
+    :param replace_state_color_by_region: if True, all states of a region will have the same color.
+                                          if False, each state keeps its own color.
+    :return: list or matplotlib colormap
 
     create_ordered_colormap() uses the color_of_each_state_or_region dictionary the create a new Colormap or list
-with any ordering.
+with given order.
+
+    (for more, see module brazil_colors.py docstring)
     """
 
     new_colors = []
@@ -159,14 +167,7 @@ with any ordering.
         
     else:
         return ListedColormap(colors=new_colors)
-
-
-"""
-######## HOW TO USE ########
-
-1. The official order of states/regions is ok? ------> use get_brazil_colors()
-2. Any case that doesn't follow the official order? -> use create_ordered_colormap()
-"""
+    
 
 brazil_colormaps, color_of_each_state_or_region = get_brazil_colors()
 # brazil_colormaps, color_of_each_state_or_region = get_brazil_colors(stronger_colors=True)
